@@ -185,7 +185,7 @@ void calc_generation(int* sire, int* dam, int* id, int* gene, int this_id) {
 /* if the parent is not a founder continue */
       if (gene[sire[j]-1] == NA_INTEGER) {
 
-/* we call this function again to get the generation of this paren - recursion */
+/* we call this function again to get the generation of this parent - recursion */
 /* The function doesnt return anything, it changes 'gene' directly */
 /* we need the '-1' for the indices because R starts at 1, C at 0 */
         calc_generation(sire, dam, id, gene, sire[j]-1);
@@ -197,7 +197,7 @@ void calc_generation(int* sire, int* dam, int* id, int* gene, int this_id) {
 
         } 
 /* we assign the generation derived from father for this individual */
-/* but this might get overriden by the dam's derived generation if it is lareger */
+/* but this might get overriden by the dam's derived generation if it is larger */
       gene[j] = gene_sire;
 
     }
